@@ -151,7 +151,8 @@ p = []
 
 current_path = os.getcwd()
 
-os.makedirs(str(start_year))
+if start_month != end_month and start_year != end_year:
+    os.makedirs(str(start_year))
 
 # print(start_month, end_month)
 while start_month != end_month and start_year != end_year:
@@ -198,7 +199,8 @@ while start_month != end_month and start_year != end_year:
         start_month = start_month % 12
         os.chdir(current_path)
         start_year = start_year + 1
-        os.makedirs(str(start_year))
+        if start_month != end_month and start_year != end_year:
+            os.makedirs(str(start_year))
     # print(soup.prettify())
 
 
